@@ -5,12 +5,6 @@ export const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  content: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   container: {
     width: '100%',
     height: '90%',

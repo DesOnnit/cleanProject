@@ -7,16 +7,15 @@ import {oneNews} from '../../utils/auth';
 import {useEffect, useState} from 'react';
 import {Card} from '../Card/Card';
 import {View} from 'react-native';
-import { fakeArr } from '../News/News';
 export const NewsPage = ({id}) => {
-  const [news, setNews] = useState(fakeArr.find((card)=>card.id === id));
-  /* const getNews = async () => {
+  const [news, setNews] = useState({});
+  const getNews = async () => {
     let response = await oneNews(id);
     setNews(response.data.news);
   };
   useEffect(() => {
     getNews();
-  }, []); */
+  }, []);
   return (
     <View style={{display:'flex',alignItems: 'center',justifyContent: 'center'}}>
       <Header />

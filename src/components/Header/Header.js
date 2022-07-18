@@ -4,13 +4,9 @@ import {useSelector, useDispatch} from 'react-redux';
 import {Text, View, Image, Button} from 'react-native';
 import {styles} from '../../style/header';
 import { Navigation } from 'react-native-navigation';
-import { loginRoot } from '../../../App';
+import { loginRoot } from '../../utils/navigate';
 export const Header = () => {
-  /* const user = useSelector(state => state.user); */
-  const user = {
-    username:'Тостер',
-    avatar_url:'https://www.iguides.ru/upload/medialibrary/9f8/9f8fdff471b7d281f81f694c100b5adc.png'
-  }
+  const user = useSelector(state => state.user);
   const dispatch = useDispatch();
   const handleLogout = () => {
     dispatch({type: 'logout'});

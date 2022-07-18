@@ -8,7 +8,7 @@ import {auth} from '../../utils/auth';
 import {useState} from 'react';
 import {useDispatch,useSelector} from 'react-redux';
 import {Navigation} from 'react-native-navigation';
-import {newsRoot} from '../../../App';
+import {newsRoot} from '../../utils/navigate';
 import { Input, Box, NativeBaseProvider,Button,Text  } from "native-base";
 export const Login = () => {
   const [email, setEmail] = useState('');
@@ -25,7 +25,7 @@ export const Login = () => {
   const handleLogin = async (email, password) => {
     setLoading(true)
     const response = await auth(email, password);
-    /* if (response.ok) { */
+    if (response.ok) {
       dispatch({
         type: 'login',
         payload: {
@@ -37,7 +37,7 @@ export const Login = () => {
           },
         },
       });
- /*    } */
+    }
     setLoading(false)
   };
   useEffect(()=>{

@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import {createStore, applyMiddleware} from 'redux';
+import Reactotron  from '../../ReactotronConfig'
 import {persistStore, persistReducer} from 'redux-persist';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
@@ -34,6 +35,6 @@ const persistedReducer = persistReducer(persistConfig, reducer);
 export const storeAuth = state => state.data;
 export const store = createStore(
   persistedReducer,
-  composeWithDevTools(applyMiddleware(thunk)),
+  composeWithDevTools(applyMiddleware(thunk),Reactotron.createEnhancer()),
 );
 export const persistor = persistStore(store);
